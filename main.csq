@@ -1,0 +1,28 @@
+# Virtual Machine
+
+#Memory codes:
+C_mem1 = 'mem1'
+C_mem2 = 'mem2' 
+C_mem3 = 'mem3'
+C_mem4 = 'mem'
+
+#Stack
+#We could make a global sturcture to represent memory
+
+class Memory:
+ memory:list<str> = list<str>()
+ last_address:int =  -1
+#Memory maps
+mem1 = Memory()
+mem2 = Memory()
+mem3 = Memory()
+mem4 = Memory()
+
+def LOAD_VALUE(mem_code = {}, value = {}):
+ if mem_code == C_mem1:
+  if mem1.last_address == -1:
+   mem1.memory.add(value)
+   mem1.last_address = 0
+  else:
+   mem1.memory.add(value)
+   mem1.last_address = mem1.last_address+1
